@@ -1,0 +1,69 @@
+<%- include('partials/facultyNavbar') %>
+
+<%- include('../partials/goBackButton') %>
+
+<div class="container mt-5">
+  <h1>Create Event</h1>
+  <%- include ("./partials/messages"); %>
+
+  <form action="/event/create-event" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="team" name="team">
+      <label class="form-check-label" for="team">Team</label>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="teamMinSize">Minimum Team Size</label>
+        <input type="number" class="form-control" id="teamMinSize" name="teamMinSize">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="teamMaxSize">Maximum Team Size</label>
+        <input type="number" class="form-control" id="teamMaxSize" name="teamMaxSize">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="eventStartDate">Start Date</label>
+        <input type="date" class="form-control" id="eventStartDate" name="eventStartDate" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="eventEndDate">End Date</label>
+        <input type="date" class="form-control" id="eventEndDate" name="eventEndDate" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="posterImages">Posters</label>
+      <input type="file" class="form-control-file" id="posterImages" name="posterImages" multiple>
+    </div>
+
+    <div class="form-group">
+      <label for="documents">Documents</label>
+      <input type="file" class="form-control-file" id="documents" name="documents" multiple>
+    </div>
+
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input type="text" class="form-control" id="contact" name="contact" required>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="allowResponse" name="allowResponse">
+      <label class="form-check-label" for="allowResponse">Allow Submission Responses</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,131 @@
+<%- include('loginNavbar') %>
+
+<br /><br /><br /><br />
+
+<div class="container">
+  <center>
+    <%- include ("./partials/messages"); %> <% if (message.length > 0) { %>
+    <div class="alert alert-danger" role="alert"><%= message %></div>
+    <% } %>
+  </center>
+  <div class="row">
+    
+    <div class="col-md-6">
+      <div class="card shadow p-5">
+        <div class="card-header text-center font-weight-bold">
+          Login Student
+        </div>
+        <div class="card-body">
+          <form action="/users/login/student" method="POST">
+            <div class="form-group">
+              <label for="studentEmail">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="studentEmail"
+                name="email"
+                placeholder="Enter @kongu.edu email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="studentPassword">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="studentPassword"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block rounded-pill"
+            >
+              Login
+            </button>
+          </form>
+          <hr />
+          <p class="text-center">or continue with</p>
+          <a
+            href="/auth/google/student"
+            class="btn btn-google btn-block border p-3 rounded-pill"
+          >
+            <img
+              src="/google_logo.svg"
+              alt=""
+              width="24"
+              height="24"
+              class="mr-2"
+            />
+            Continue with Google
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card shadow p-5">
+        <div class="card-header text-center font-weight-bold">
+          Login Faculty
+        </div>
+        <div class="card-body">
+          <form action="/users/login/faculty" method="POST">
+            <div class="form-group">
+              <label for="studentEmail">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="studentEmail"
+                placeholder="Enter email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="studentPassword">Password</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="studentPassword"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block rounded-pill"
+            >
+              Login
+            </button>
+          </form>
+          <hr />
+          <p class="text-center">or continue with</p>
+          <a
+            href="/auth/google/faculty"
+            class="btn btn-google btn-block border p-3 rounded-pill"
+          >
+            <img
+              src="/google_logo.svg"
+              alt=""
+              width="24"
+              height="24"
+              class="mr-2"
+            />
+            Continue with Google
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  h3 {
+    font-family: sans-sarif;
+  }
+
+  .row {
+    min-height: 100vh;
+    align-items: center;
+  }
+</style>
